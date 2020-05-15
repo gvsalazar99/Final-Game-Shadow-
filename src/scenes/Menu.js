@@ -16,12 +16,12 @@ class Menu extends Phaser.Scene {
 
 
 
-      let background = this.add.tileSprite('background');
+      let background = this.add.sprite('background');
       let button = this.add.sprite('playbutton');
 
 
-      background = this.add.tileSprite(0, 0,  640, 480, 'background').setOrigin(0, 0);
-      button = this.add.sprite(game.config.width/4,game.config.width/4, 'playbutton').setOrigin(0).setScale(.5); 
+      background = this.add.sprite(0,0, 'background').setOrigin(0, 0);
+      button = this.add.sprite(game.config.width/4,game.config.height/4, 'playbutton').setOrigin(0).setScale(.5); 
       
 
       //button = this.add.button(0,0, 95, 400, 'button', actionOnClick, this, 2, 1, 0);

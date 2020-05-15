@@ -3,12 +3,13 @@
 
 let config = {
     type: Phaser.CANVAS,
-    width:640,
-    height:480,
-   scene: [ Menu , Play] 
+    width:1260,
+    height:590,
+   scene: [ Menu , Play, Credits, Lv1, Lv2, Lv3 ] 
 };
 
 let game = new Phaser.Game(config);
+
 // define game settings
 game.settings = {
     spaceshipSpeed: 3,
