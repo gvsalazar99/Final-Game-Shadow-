@@ -7,6 +7,9 @@ class Menu extends Phaser.Scene {
     preload() {
       this.load.image('background', './assets/cosmowanda.png'); 
       this.load.image('playbutton', './assets/PlayButton.png'); 
+      this.load.image('pink', './assets/pink.png'); 
+      this.load.image('character', './assets/Shadow.PNG'); 
+
 
     }
 
@@ -27,7 +30,7 @@ class Menu extends Phaser.Scene {
       //button = this.add.button(0,0, 95, 400, 'button', actionOnClick, this, 2, 1, 0);
 
 
-      this.input.on('pointerdown',()=> this.scene.start('playScene'))
+      this.input.on('pointerdown',()=> this.scene.start('Level1'))
         
 
 
