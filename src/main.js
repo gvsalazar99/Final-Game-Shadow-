@@ -5,7 +5,12 @@ let config = {
     type: Phaser.CANVAS,
     width:1260,
     height:590,
-    debug: true,
+    physics:{
+        default: 'arcade',
+        arcade: {
+            debug: true,
+        }
+    },
    scene: [ Menu , Play, Credits, Lv1, Lv2, Lv3 ] 
 };
 
