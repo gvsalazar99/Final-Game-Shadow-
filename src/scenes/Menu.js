@@ -16,8 +16,13 @@ class Menu extends Phaser.Scene {
       this.load.image('necklace', './assets/Necklace.PNG'); 
       this.load.image('catbed', './assets/Cat bed.PNG'); 
       this.load.image('purple', './assets/wallpaper.png'); 
-
-
+      //dialogue boxes
+      this.load.image('blue1', './assets/TextBoxes/BlueLevel1.PNG');
+      this.load.image('blue2', './assets/TextBoxes/BlueLevel2.PNG');
+      this.load.image('blue3', './assets/TextBoxes/BlueLevel3.PNG');
+      this.load.image('yellow1', './assets/TextBoxes/YellowLevel1.PNG');
+      this.load.image('yellow2', './assets/TextBoxes/YellowLevel2.PNG');
+      this.load.image('yellow3', './assets/TextBoxes/YellowLevel3.PNG');
 
 
 
@@ -32,7 +37,8 @@ class Menu extends Phaser.Scene {
       let button = this.add.sprite('playbutton');
 
       //button interactivity in menu 
-      background = this.add.sprite(0,0, 'background').setOrigin(0, 0);
+      background = this.add.sprite(0, 0, 'background').setOrigin(0, 0);
+      background.x = game.config.width - background.width;
 
       this.button = this.add.sprite(game.config.width/4,game.config.height/4, 'playbutton').setScale(0.25,0.25).setOrigin(0);
       this.button.setInteractive();
