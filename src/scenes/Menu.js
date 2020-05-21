@@ -23,6 +23,8 @@ class Menu extends Phaser.Scene {
       this.load.image('yellow1', './assets/TextBoxes/YellowLevel1.PNG');
       this.load.image('yellow2', './assets/TextBoxes/YellowLevel2.PNG');
       this.load.image('yellow3', './assets/TextBoxes/YellowLevel3.PNG');
+      this.load.image('mementomenu', './assets/IMG_0094.PNG');
+
 
 
 
@@ -33,14 +35,14 @@ class Menu extends Phaser.Scene {
     create() {
 
       
-      let background = this.add.sprite('background');
+      let background = this.add.sprite('mementomenu');
       let button = this.add.sprite('playbutton');
 
       //button interactivity in menu 
-      background = this.add.sprite(0, 0, 'background').setOrigin(0, 0);
-      background.x = game.config.width - background.width;
+      background = this.add.sprite(0, 0, 'mementomenu').setOrigin(0, 0).setScale(0.85,0.85);
+      //background.x = game.config.height - background.width;
 
-      this.button = this.add.sprite(game.config.width/4,game.config.height/4, 'playbutton').setScale(0.25,0.25).setOrigin(0);
+      this.button = this.add.sprite(game.config.width/2,game.config.height/2, 'playbutton').setScale(0.3,0.3).setOrigin(0);
       this.button.setInteractive();
       this.button.on('pointerdown',()=> this.scene.start('Level1'))
         
