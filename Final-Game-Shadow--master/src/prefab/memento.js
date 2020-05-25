@@ -11,9 +11,14 @@ class memento extends Phaser.GameObjects.Sprite {
     }
 
     create() {
+
+    //    gameObject.setInteractive({
+    //         cursor:'url(assets/butterflysmall.cur), pointer'
+    //     });
  
     }
     makeInteractive() {
+        
         this.on('pointerdown', (pointer, gameObject) => {
             console.log(this);
             this.isDisplayingText = true;

@@ -5,13 +5,25 @@ class Lv1 extends Phaser.Scene {
 
 	
 	create() {
+
+
+		//camera fade in n out 
+		this.cameras.main.once('camerafadeoutcomplete', function (camera) {
+			this.add.image(1260, 590, 'levelonenew').setOrigin(0, 0);
+			camera.fadeIn(300, 0,0,0);
+	
+		 //create sounds
+		 this.music = this.sound.add('level1music');
+		 this.music.play( {loop:true} );
+
+
 		//create background
 		let background = this.add.sprite(0,0, 'levelonenew').setOrigin(0, 0);
 		
 		//exit button switches scenes to level 2    
 		this.tempLevl2button = this.add.sprite(game.config.width/4,game.config.height/4, 'exitbutton').setScale(0.25,0.25).setOrigin(0);
 		this.tempLevl2button.setInteractive();
-		this.tempLevl2button.on('pointerdown',()=> this.scene.start('Level2'));
+		this.tempLevl2button.on('pointerdown',()=> {this.scene.start('Level2'); this.music.stop()});
 		
 
 		//dialogue box art
@@ -43,7 +55,7 @@ class Lv1 extends Phaser.Scene {
 		this.memento = new memento(this, game.config.width*.44, game.config.height*.299, 'girlsmall').setOrigin(0).setScale(.87);
 		this.memento.text = 'Rule #1: Don\'t click on the exit button!';
 		this.memento.makeInteractive();
-
+	
 
 
 
@@ -52,8 +64,12 @@ class Lv1 extends Phaser.Scene {
 		//this.character.x = game.config.width/2;
 		//this.character.y = game.config.height/2;
 
-
+	}, this);
+  
+	this.cameras.main.fadeOut(300, 0,0,0);
 	}
+
+
 
 	keyPress(char) {
 
@@ -62,6 +78,7 @@ class Lv1 extends Phaser.Scene {
 
 	
 	update() {
+	
 		console.log
 	}
 
